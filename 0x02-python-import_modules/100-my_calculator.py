@@ -2,7 +2,6 @@
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     import sys
-    result = 0
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
@@ -14,4 +13,4 @@ if __name__ == "__main__":
     a = int(sys.argv[1])
     b = int(sys.argv[3])
     result = funcs[sys.argv[2]](a, b)
-    print("{} + {} = {}".format(sys.argv[1], sys.argv[3], result))
+    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
