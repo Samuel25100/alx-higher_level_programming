@@ -4,4 +4,4 @@ if __name__ == "__main__":
     print("{} arguments:".format(len(sys.argv) - 1))
     for count, arg in enumerate(sys.argv):
         if count != 0:
-            print("{:d}: {:s}".format(count, arg))
+            print("{}: {}".format(count, arg))
