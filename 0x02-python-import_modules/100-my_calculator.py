@@ -13,4 +13,4 @@ if __name__ == "__main__":
     a = int(sys.argv[1])
     b = int(sys.argv[3])
     result = funcs[sys.argv[2]](a, b)
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], result))
+    print("{} {} {} = {}".format(a, sys.argv[2], b, result))
