@@ -7,8 +7,16 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializer or constructor of new object"""
-        self.__size = size
-        self.__position = position
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+        if (not isinstance(value, tuple)) or \
+                len(value) != 2 or \
+                not all(i >= 0 for i in value):
+                    self.__position = position
 
     @property
     def size(self):
