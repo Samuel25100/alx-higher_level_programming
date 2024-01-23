@@ -13,10 +13,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-        if (not isinstance(value, tuple)) or \
-                len(value) != 2 or \
-                not all(i >= 0 for i in value):
-                    self.__position = position
+        self.__position = position
 
     @property
     def size(self):
