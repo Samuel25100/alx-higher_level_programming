@@ -1,0 +1,43 @@
+#3-say_my_name
+The module say_my_name recieve two str arguments that are the name andlast name of user,the module print to stdout "My name is <first_name>
+<Last_name>". the two argument must be string otherwise it raise typeError with exception message
+syntax: say_my_name(first_name, last_name="")
+=====================================================================
+Importing module
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Using both string argument
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
+
+Last_name could be ommitted to empty string
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+Checking on non-string data type
+on first_name
+	>>> say_my_name(12, "White")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+on last_name	
+	>>> say_my_name("White", 12)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+on both
+	>>> say_my_name(1, 12)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+Giving no arguments
+	>>> say_my_name()
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
