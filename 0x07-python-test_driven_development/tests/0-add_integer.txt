@@ -1,0 +1,66 @@
+File 0-add_integer have module 'add_integer', its add two integer
+args 'a' and 'b' return result. Its only add two int data types if anythoes are other data type it will raise exceptions error except for
+float it will rounded to int (it will truncate numbers behind decimal)*********************************************************************
+#importing the module
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	
+adding two ints
+	>>> add_integer(1, 2)
+	3
+
+adding two ints one of them is negative
+	>>> add_integer(100, -2)
+	98
+	>>> add_integer(-2, 100)
+	98
+
+adding two negative ints
+	>>> add_integer(-3, -2)
+	-5
+
+adding float and ints
+	>>> add_integer(100.3, -2)
+	98
+	>>> add_integer(-2, 100.3)
+	98
+
+adding bool value is possible, 'True' = 1 and 'False' = 0
+	>>> add_integer(True, False)
+	1
+
+
+**********************************************************************
+"""In add_integer the second argument 'b' can be ommitted and become
+default value 'b = 98'"""
+
+adding with ommitted second argument
+	>>> add_integer(2)
+	100
+
+**********************************************************************
+"""Special case of error raising conditions, if any of arguments are
+non-intger then its raise typeerror"""
+
+adding non integer 'a' on  integer 'b'
+
+	>>> add_integer("Cha", 4)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+
+adding integer 'a' on non-integer 'b'
+
+	>>> add_integer(4, "Cha")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+adding tuple on int
+
+	>>> add_integer((), 2)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
