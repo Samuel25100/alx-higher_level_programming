@@ -1,0 +1,64 @@
+#print_square
+Its print square using char '#' in size of given argument 'size',
+error raising conditions are:
+	if 'size' is not integer raise TypeError exception
+	if 'size' is negative raise ValueError exception
+	if 'size' is float and less than 0 raise TypeError exception
+=====================================================================
+Importing the module
+	>>> print_square = __import__('4-print_square').print_square
+
+Using int
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+	>>> print_square(0)
+	
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+Using negative int
+	>>> print_square(-4)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+Using float
+	>>> print_square(4.2)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+Using negative float
+	>>> print_square(-4.2)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+Using string
+	>>> print_square("square")
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+Using none as argument
+	>>> print_square(None)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square()
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument: 'size'
