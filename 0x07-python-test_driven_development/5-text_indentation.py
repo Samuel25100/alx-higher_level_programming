@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Text indentation function."""
+
+
 def text_indentation(text):
+    """Indent text after char '.'':''?' by inserting newline."""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     chk = 0

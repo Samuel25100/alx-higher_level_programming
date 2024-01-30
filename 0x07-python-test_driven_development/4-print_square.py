@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Print square - print square using char '#' in size argument size"""
+"""Print square function."""
 
 
 def print_square(size):
+    """Print square using char '#' in size argument size."""
     if ((not isinstance(size, int)) or
             (isinstance(size, float) and (size < 0))):
         raise TypeError("size must be an integer")

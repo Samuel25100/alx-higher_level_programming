@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Divide the argument matrix to div return new matrix"""
+"""Divide the argument matrix to div return new matrix."""
 
 
 def matrix_divided(matrix, div):
+    """Divide the matrix by div."""
     if (not isinstance(matrix, list) and
             not all(isinstance(i, list) for i in matrix)):
         raise TypeError(
