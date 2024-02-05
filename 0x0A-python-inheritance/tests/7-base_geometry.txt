@@ -56,3 +56,15 @@ Passing argument in wrong way
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking area method
+	>>> bg = BaseGeometry()
+	>>> bg.area(5)
+	Traceback (most recent call last):
+		...
+	TypeError: area() takes 1 positional argument but 2 were given
+	>>> bg.area(5, 5)
+	Traceback (most recent call last):
+		...
+	TypeError: area() takes 1 positional argument but 3 were given
+
