@@ -1,0 +1,40 @@
+Importing module
+	>>> MyList = __import__('1-my_list').MyList
+	>>>
+
+Checking using normal int
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+Using empty list
+	>>> emp = []
+	>>> my_em = MyList(emp)
+	>>> my_em.print_sorted()
+	[]
+
+Using negative number
+	>>> my_lt = MyList()
+	>>> my_lt.append(5)
+	>>> my_lt.append(1)
+	>>> my_lt.append(-1)
+	>>> my_lt.append(51)
+	>>> my_lt.append(-5)
+	>>> my_lt.print_sorted()
+	[-5, -1, 1, 5, 51]
+
+Adding non-int in list
+	>>> l = [1, 5, 'A', 6, 7]
+	>>> my_non = MyList(l)
+	>>> my_non.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'str' and 'int'
+
