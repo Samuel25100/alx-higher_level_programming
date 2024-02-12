@@ -3,13 +3,13 @@
 from models.rectangle import Rectangle
 
 
-class Square(Rectangle): 
+class Square(Rectangle):
     """Define square and it inherit from a class rectangle."""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initializer of square class."""
+        """Initialize for square class."""
         super().__init__(size, size, x, y, id)
-        
+
     def __str__(self):
         """Override the __str__ method to return the following."""
         return "[Square] ({}) {}/{} - {}".format(
@@ -17,8 +17,8 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        "Width getter."
-        return(self.width)
+        """Width getter."""
+        return (self.width)
 
     @size.setter
     def size(self, size):

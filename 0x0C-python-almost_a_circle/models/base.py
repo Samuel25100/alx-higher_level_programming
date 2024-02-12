@@ -6,6 +6,7 @@ import os
 
 class Base:
     """It is base of all class of this project."""
+    
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -31,7 +32,8 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                list_dicts = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+                list_dicts = cls.to_json_string(
+                    [obj.to_dictionary() for obj in list_objs])
                 f.write(list_dicts)
 
     @staticmethod
@@ -60,4 +62,3 @@ class Base:
                 for i in list_f:
                     list_tmp.append(cls.create(**i))
         return (list_tmp)
-

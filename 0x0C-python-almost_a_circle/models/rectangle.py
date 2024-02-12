@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""Class rectangle"""
+"""Class rectangle."""
 from models.base import Base
 
 
 class Rectangle(Base):
+    """Define Rectangle with width, height, x, y."""
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializer for class Rectangle"""
+        """Initialize for class Rectangle."""
         super().__init__(id)
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -109,7 +111,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Override the __str__ method to return the following."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """Assign each argument to id, width, height, x and y."""
