@@ -88,6 +88,13 @@ class Test_Sq_initali(unittest.TestCase):
     def test_None_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(None)
+    def test_negative_size(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-1)
+
+    def test_zero_size(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(0)
 
     def test_set_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
