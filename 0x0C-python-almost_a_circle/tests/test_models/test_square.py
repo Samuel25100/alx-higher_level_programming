@@ -388,12 +388,24 @@ class Test_Sq_update_kwargs(unittest.TestCase):
 
 class Test_Sq_to_dictionary(unittest.TestCase):
 
-        def test_to_dictionary_output(self):
-            s = Square(1, 2, 3, 4)
-            correct = {'id': 4, 'x': 2, 'size': 1, 'y': 3}
-            self.assertDictEqual(correct, s.to_dictionary())
+    def test_to_dictionary_output(self):
+        s = Square(1, 2, 3, 4)  
+        correct = {'id': 4, 'x': 2, 'size': 1, 'y': 3}
+        self.assertDictEqual(correct, s.to_dictionary())
 
+class Test_Sq_save_to_file(unittest.TestCase):
 
+    def test_Sq_save_to_file_emty(self):
+        s = Square(1, 2, 3, 4)
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 2)
+
+    def test_Sq_save_to_file_None(self):
+        s = Square(1, 2, 3, 4)
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 2)
 
 
 
