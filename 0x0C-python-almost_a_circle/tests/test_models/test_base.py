@@ -54,7 +54,14 @@ class Test_Base_save_to_file(unittest.TestCase):
             self.assertTrue(len(f.read()) == 53)
 
     def test_save_to_file_empty_rec(self):
+        r = Rectangle(10, 7, 2, 8, 5)
         Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 2)
+
+    def test_save_to_file_None_rec(self):
+        r = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             self.assertTrue(len(f.read()) == 2)
 
