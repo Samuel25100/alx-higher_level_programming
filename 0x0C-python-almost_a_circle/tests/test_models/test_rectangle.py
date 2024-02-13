@@ -379,6 +379,18 @@ class Test_Rec_update_kwarg(unittest.TestCase):
         r.update(id=89, x=1, height=2, y=3, width=4)
         self.assertEqual("[Rectangle] (89) 1/3 - 4/2", str(r))
 
+class Test_Rec_save_to_file(unittest.TestCase):
+
+    def test_save_to_None(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 2)
+
+    def test_save_to_empty(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 2)
+
 
 if __name__ == "__main__":
     unittest.main()
