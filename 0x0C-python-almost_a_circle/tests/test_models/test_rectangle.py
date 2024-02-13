@@ -30,6 +30,11 @@ class Test_Rec_init(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1)
 
+    def test_arg(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+
     def test_id(self):
         r1 = Rectangle(1, 2)
         r2 = Rectangle(2, 1)
