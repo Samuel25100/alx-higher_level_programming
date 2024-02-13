@@ -2,6 +2,7 @@
 """Class base."""
 import json
 import os
+import csv
 
 
 class Base:
@@ -65,3 +66,39 @@ class Base:
                 for i in list_f:
                     list_tmp.append(cls.create(**i))
         return (list_tmp)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize list of object to CSV,write in '.csv' file."""
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, 'w') as f:
+            if list_objs == [] or list_objs is None:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    key = ["id", "width", "height", "x", "y"]
+                else:
+                    key = ["id", "size", "x", "y"]
+                f_csv = csv.DictWriter(f, fieldnames=key)
+                for data in list_objs:
+                    f_csv.writerow(data.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize CSV to python data structure."""
+        filename = cls.__name__ + ".csv"
+        data = []
+
+        with open(filename, 'r') as f:
+            if cls.__name__ == "Rectangle":
+                key = ["id", "width", "height", "x", "y"]
+            else:
+                key = ["id", "size", "x", "y"]
+            read = csv.DictReader(f, fieldnames=key)
+            data = [dict(
+                [key, int(value)]
+                for key, value in dic.items())
+                for dic in read]
+
+        return (cls.create(**d) for d in data)
