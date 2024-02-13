@@ -6,7 +6,7 @@ import os
 
 class Base:
     """It is base of all class of this project."""
-    
+
     __nb_objects = 0
 
     def __init__(self, id=None):
