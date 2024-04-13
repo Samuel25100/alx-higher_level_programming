@@ -13,8 +13,8 @@ if __name__ == "__main__":
     )
     cursor = connection.cursor()
     cursor.execute("""SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') AS list
-    FROM cities INNER JOIN states ON states.id = cities.state_id
-    WHERE states.name = %s ORDER BY cities.id ASC""", (sys.argv[4],))
+    FROM cities INNER JOIN states ON states.id=cities.state_id
+    WHERE states.name=%s ORDER BY cities.id ASC""", (sys.argv[4],))
     rows = cursor.fetchone()[0]
     print(rows)
     cursor.close()
