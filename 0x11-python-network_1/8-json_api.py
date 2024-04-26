@@ -7,9 +7,20 @@ import sys
 def fetch_url():
     """Fetch url and make POST request of values."""
     val = {}
-    val["email"] = sys.argv[2]
-    resp = requests.post(sys.argv[1], val)
-    print(resp.text)
+    url = "http://0.0.0.0:5000/search_user"
+    if (len(sys.argv) != 2):
+        val['q'] = ""
+    else:
+        val['q'] = sys.argv[1]
+    resp = requests.post(url, val)
+    try:
+        out = resp.json
+        if (out):
+            print("[{}] <{}>".format(out[id], out['name']))
+        else:
+            print("No result")
+    except ValueError:
+        print('Not a valid JSON')
 
 
 if __name__ == "__main__":
