@@ -6,7 +6,7 @@ import sys
 
 def fetch_url():
     """Fetch id value of X-request-Id from header."""
-    file = request.get(sys.argv[1])
+    file = requests.get(sys.argv[1])
     if (file.status_code >= 400):
         print("Error code:", file.status_code)
     else:
