@@ -10,10 +10,10 @@ def fetch_url():
             sys.argv[1], sys.argv[2])
     resp = requests.get(url, params={'per_page': 10})
     val = resp.json()
-    for i in range(10):
+    for i in val:
         print("{}: {}".format(
-            val[i].get("sha"),
-            val[i].get("commit").get("author").get("name")))
+            i.get("sha"),
+            i.get("commit").get("author").get("name")))
 
 
 if __name__ == "__main__":
