@@ -2,10 +2,17 @@
 """Fetch data from a url."""
 import urllib.request
 
+
 def fetch_url():
-    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+    """Fetch data from url."""
+    url = "https://alx-intranet.hbtn.io/status"
+    with urllib.request.urlopen(url) as response:
         file = response.read()
-        print(file.decode("utf-8"))
+        print("Body response:")
+        print("\t- type:", type(file))
+        print("\t- content:", file)
+        print("\t- utf8 content:", file.decode("utf-8"))
+
 
 if __name__ == "__main__":
     fetch_url()
