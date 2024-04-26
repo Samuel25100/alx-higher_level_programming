@@ -9,13 +9,13 @@ def fetch_url():
     url = "https://api.github.com/repos/{}/{}/commits".format(
             sys.argv[1], sys.argv[2])
     resp = requests.get(url, params={'per_page': 10})
-    val = resp.json()
     try:
+        val = resp.json()
         for i in val:
             print("{}: {}".format(
                 i.get("sha"),
                 i.get("commit").get("author").get("name")))
-    except IndexError:
+    except (IndexError, ValueError):
         pass
 
 
