@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""Fetch data from a url from github api."""
+import requests
+import sys
+
+
+def fetch_url():
+    """Fetch data from github api using usename and password."""
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+            sys.argv[1], sys.argv[2])
+    resp = requests.get(url, params={'per_page': 10})
+    val = resp.json()
+    for i in range(10):
+        print("{}: {}".format(
+            val[i].get("sha"),
+            val[i].get("commit").get("author").get("name")))
+
+
+if __name__ == "__main__":
+    fetch_url()
