@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Fetch data from a url and handle error."""
 import urllib.request
+import urllib.error
 import sys
 
 
