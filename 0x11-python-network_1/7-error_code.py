@@ -9,6 +9,8 @@ def fetch_url():
     file = request.get(sys.argv[1])
     if (file.status_code >= 400):
         print("Error code:", file.status_code)
+    else:
+        print(file.text)
 
 
 if __name__ == "__main__":
