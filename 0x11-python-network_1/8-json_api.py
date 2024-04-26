@@ -14,9 +14,9 @@ def fetch_url():
         val['q'] = sys.argv[1]
     resp = requests.post(url, val)
     try:
-        out = resp.json
+        out = resp.json()
         if (out):
-            print("[{}] <{}>".format(out[id], out['name']))
+            print("[{}] <{}>".format(out['id'], out['name']))
         else:
             print("No result")
     except ValueError:
