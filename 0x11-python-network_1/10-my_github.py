@@ -6,8 +6,7 @@ import sys
 
 def fetch_url():
     """Fetch data from github api using usename and password."""
-    url = "https://api.github.com/applications".format(
-            sys.argv[1], sys.argv[2])
+    url = "https://api.github.com/user"
     resp = requests.get(url, auth=(sys.argv[1], sys.argv[2]))
     val = resp.json()
     print(val.get("id"))
