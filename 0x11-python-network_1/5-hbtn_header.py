@@ -8,7 +8,7 @@ def fetch_url():
     """Fetch id value of X-request-Id from header."""
     file = requests.get(sys.argv[1])
     file = file.headers
-    print(file['X-Request-Id'])
+    print(file.get('X-Request-Id'))
 
 
 if __name__ == "__main__":
