@@ -12,7 +12,7 @@ def fetch_url():
             file = response.read()
             print(file.decode('utf-8'))
     except urllib.error.HTTPError as er:
-        print("Error code: ", er.code)
+        print("Error code:", er.code)
 
 
 if __name__ == "__main__":
