@@ -16,7 +16,7 @@ def fetch_url():
     try:
         out = resp.json()
         if (out):
-            print("[{}] <{}>".format(out['id'], out['name']))
+            print("[{}] {}".format(out['id'], out['name']))
         else:
             print("No result")
     except ValueError:
