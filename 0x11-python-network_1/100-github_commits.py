@@ -8,13 +8,13 @@ def fetch_url():
     """Fetch data from github api using usename and password."""
     url = "https://api.github.com/repos/{}/{}/commits".format(
             sys.argv[1], sys.argv[2])
-    resp = requests.get(url, params={'per_page': 10})
     try:
+        resp = requests.get(url, params={'per_page': 10})
         val = resp.json()
         for i in val:
             print("{}: {}".format(
-                i.get("sha"),
-                i.get("commit").get("author").get("name")))
+                i.["sha"],
+                i.["commit"]["author"]["name"])
     except (IndexError, ValueError):
         pass
 
