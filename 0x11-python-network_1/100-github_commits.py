@@ -14,7 +14,7 @@ def fetch_url():
         for i in val:
             print("{}: {}".format(
                 i["sha"],
-                i["commit"]["author"]["name"])
+                i["commit"]["author"]["name"]))
     except (IndexError, ValueError):
         pass
 
