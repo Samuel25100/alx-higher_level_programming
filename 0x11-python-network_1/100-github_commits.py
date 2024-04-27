@@ -12,7 +12,7 @@ def fetch_url():
         resp = requests.get(url, params={'per_page': 10})
         val = resp.json()
         for i in val:
-            print("{}: {}".format(
+            print("{}:{}".format(
                 i["sha"],
                 i["commit"]["author"]["name"]))
     except (IndexError, ValueError):
